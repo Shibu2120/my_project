@@ -1,0 +1,22 @@
+ <%= form_with model: [ @user ] do |form| %>
+
+  <div class="field">
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  </div> 
+
+  <div class="field">
+  <%= form.label :contact %>
+  <%= form.text_field :contact %>
+  <%# form.select :place, ["Mumbai", "Chennai", "Banglore", "Indore", "Delhi"] %>
+  </div>
+
+  <div class="field">
+  <%= form.label :address %>
+  <%= form.text_field :address %>
+  </div> 
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+  <% end %>    

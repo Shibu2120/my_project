@@ -1,0 +1,40 @@
+<%# debug @customer %>
+<%# simple_format @customer.to_yaml %>
+
+<div>
+	<strong>first_name</strong>
+	<%= @customer.first_name %>
+</div>
+    
+<div>
+    <strong>last_name</strong>
+    <%= @customer.last_name %>
+</div>
+
+<div>
+   <strong>title</strong>
+   <%= @customer.title %>
+</div>
+
+<div>
+   <strong>email</strong>
+   <%= @customer.email %>
+</div>
+
+<div>
+    <strong>visits</strong>
+    <%= @customer.visits %>
+</div>
+
+<div> 
+    <strong>order_count</strong>
+    <%= @customer.order_count %>
+</div>
+
+<div> 
+    <strong>lock_version </strong>
+    <%= @customer.lock_version %>
+</div>
+
+<%= link_to "edit", edit_customer_path %>
+<%= link_to "back", customers_path %>

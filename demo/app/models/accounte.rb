@@ -1,0 +1,2 @@
+class Accounte < ApplicationRecord
+end

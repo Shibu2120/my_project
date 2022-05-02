@@ -1,0 +1,2 @@
+module SocialplateformsHelper
+end

@@ -1,0 +1,31 @@
+<h1>Account</h1>
+
+<table>
+	<thead>
+		<tr>
+			<th>account number</th>
+		</tr>
+	</thead>
+
+
+<tbody>
+<% @accounts.each do |account| %>
+	<tr>
+		<td><%= account.supplier_id %></td>
+		<td><%= account.account_number %></td>
+		<td><%= link_to "show", account_path(account.id) %></td>
+		<td><%= link_to "edit", edit_account_path(account.id) %></td>
+		<td><%= link_to "destroy", account_path(account.id), data:{
+			method: :delete,
+			confirm: "Are you sure"
+		} %></td>
+
+	</tr>	
+<% end %>
+</tbody>
+</table>
+
+<%= link_to "new account", new_account_path %>
+
+
+

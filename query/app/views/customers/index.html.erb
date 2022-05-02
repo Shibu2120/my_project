@@ -1,0 +1,38 @@
+<h2>Customer Data </h2>
+
+<table width="100%", border="1px";>
+	<thead>
+		<tr>
+			<th>first_name</th>
+			<th>last_name</th>
+			<th>title</th>
+			<th>email</th>
+			<th>visits</th>
+			<th>order_count</th>
+			<th>lock version</th>
+			<th>show</th>
+			<th>edit</th>
+			<th>destroy</th>
+        </tr>
+    </thead>
+    <tbody>
+    		<% @customers.each do |customer| %>
+    	<tr>
+    		<td><%= customer.first_name %></td>
+    		<td><%= customer.last_name %></td>
+    		<td><%= customer.title %></td>
+    		<td><%= customer.email %></td>
+    		<td><%= customer.visits %></td>
+    		<td><%= customer.order_count %></td>
+    		<td><%= customer.lock_version %></td>
+    		<td><%= link_to "show", customer_path(customer.id) %></td>
+    		<td><%= link_to "edit", edit_customer_path(customer.id) %></td>
+    		<td><%= link_to "destroy", customer , data: { method: :delete,
+    			confirm: "are you sure"
+    		} %></td>
+        </tr>		
+    		<% end %>
+    </tbody>
+</table>   
+
+    <%= link_to "new customer data", new_customer_path %>

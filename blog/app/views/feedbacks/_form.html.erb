@@ -1,0 +1,14 @@
+<%= form_with model: [ @employee, @employee.feedbacks.build ] do |form| %>
+<p>
+   <%= form.label :employee_name %><br>
+   <%= form.text_field :employee_name %>
+</p>
+
+<p>
+   <%= form.label :body %><br>
+   <%= form.text_field :body %>
+</p>
+<p>
+<%= form.submit %>
+</p>
+<% end %> 

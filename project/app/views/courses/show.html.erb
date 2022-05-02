@@ -1,0 +1,22 @@
+<h2> Course Data </h2>
+
+<p>
+<strong>ame: </strong>
+<%= @course.name %>
+</p>
+
+<p>
+<strong>Fee: </strong>
+<%= @course.fee %>
+</p>
+
+<p>
+<strong>Duration: </strong>
+<%= @course.duration %>
+</p>
+
+<tr>
+	<th><%= link_to "back", courses_path %>
+	<th><%= link_to "edit", edit_course_path %>	
+</tr>	
+

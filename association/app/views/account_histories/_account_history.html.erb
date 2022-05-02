@@ -1,0 +1,10 @@
+   
+   
+<% if @supplier.account_history.present? %>
+   <%= @supplier.account_history.credit_rating %>
+<% else %>
+   <h4> This Supplier doesn't have good credit rating </h4> 
+<% end %>
+
+
+   

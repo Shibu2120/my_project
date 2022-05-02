@@ -1,0 +1,38 @@
+<h2>review Data </h2>
+
+<table width="100%", border="1px";>
+	<thead>
+		<tr>
+			<th>first_name</th>
+			<th>last_name</th>
+			<th>title</th>
+			<th>email</th>
+			<th>visits</th>
+			<th>order_count</th>
+			<th>lock version</th>
+			<th>show</th>
+			<th>edit</th>
+			<th>destroy</th>
+        </tr>
+    </thead>
+    <tbody>
+    		<% @reviews.each do |review| %>
+    	<tr>
+    		<td><%= review.first_name %></td>
+    		<td><%= review.last_name %></td>
+    		<td><%= review.title %></td>
+    		<td><%= review.email %></td>
+    		<td><%= review.visits %></td>
+    		<td><%= review.order_count %></td>
+    		<td><%= review.lock_version %></td>
+    		<td><%= link_to "show", review_path(review.id) %></td>
+    		<td><%= link_to "edit", edit_review_path(review.id) %></td>
+    		<td><%= link_to "destroy", review , data: { method: :delete,
+    			confirm: "are you sure"
+    		} %></td>
+        </tr>		
+    		<% end %>
+    </tbody>
+</table>   
+
+    <%= link_to "new review data", new_review_path %>

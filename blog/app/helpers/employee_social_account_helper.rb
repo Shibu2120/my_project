@@ -1,0 +1,2 @@
+module EmployeeSocialAccountHelper
+end

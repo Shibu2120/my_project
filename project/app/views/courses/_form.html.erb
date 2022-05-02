@@ -1,0 +1,22 @@
+<%= form_with model:course do |form| %>
+
+<div class="field">
+	<%= form.label :name %><br>
+	<%= form.text_field :name %>
+</div><br>
+
+<div class="field">
+	<%= form.label :fee %><br>
+	<%= form.text_field :fee %>
+</div><br>	
+
+<div class="field">
+	<%= form.label :duration %><br>
+	<%= form.text_field :duration %>
+</div><br>
+
+<div class="actions">
+     <%= form.submit %>
+</div>
+
+<% end %>     	

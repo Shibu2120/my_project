@@ -1,0 +1,17 @@
+<h2> Grocery item list</h2>
+<%= form_with model:[@user, @user.listitems.build ] do |form|%>
+<div>
+	<%= form.label :grocery_id %>
+    <%= form.select :grocery_id, Grocery.all.map { |g| [g.grocery_item, g.id] } %>
+</div>
+
+<div>
+	<%= form.label :Quantity %>
+	<%= form.text_field :quantity %>
+</div>	
+
+<div>
+  <%= form.submit %>
+</div>
+
+<% end %>    

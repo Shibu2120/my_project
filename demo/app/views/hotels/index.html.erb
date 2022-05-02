@@ -1,0 +1,27 @@
+<h1> Hotel manegement</h1>
+<table>
+<thead>
+	<tr>
+		<th>Name</th>
+		<th>Descrition</th>
+		<th>Address</th>
+	</tr>	
+</thead>
+<tbody>
+<% @hotels.each do |hotel|%>
+<tr>
+   <td><%= hotel.name %></td>
+   <td><%= hotel.description %></td>
+   <td><%= hotel.address %></td>
+   <td><%= link_to "show", hotel_path(hotel.id) %></td>
+   <td><%= link_to "edit", edit_hotel_path(hotel.id) %></td>
+   <td><%= link_to "destroy", hotel_path(hotel.id), data:{
+   	    method: :delete,
+   	    confirm: "Are you sure"
+   } %>
+<tr>
+<% end %>	
+   </tbody>	
+</table>
+
+<%= link_to "New Hotel", new_hotel_path %>

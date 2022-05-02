@@ -1,0 +1,24 @@
+<h2> This is for query </h2>
+
+<table width="100%", border="1px";>
+	<thead>
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Title</th>
+        </tr>
+    </thead>
+    <tbody>
+    	<% if @author.present? %>
+	    	<tr>
+	    		<td><%= @author.first_name %></td>
+	    		<td><%= @author.last_name %></td>
+	    		<td><%= @author.title %></td>
+	        </tr>
+        <% else %>
+            <p> There is no author data</p>		
+    	<% end %>
+    	<%= will_paginate @authors %>
+
+    </tbody>
+</table>  

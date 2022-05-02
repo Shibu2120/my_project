@@ -1,0 +1,41 @@
+<h2> Grocery Item</h2>
+
+<%= form_tag(groceries_path method: :get ) do  %>
+<p>Serach course</p>
+<%= text_field_tag(:search, params[:search]) %>
+<%= submit_tag("search") %>
+<% end %>
+
+<table width="100%" border="1px">
+	<thead>
+		<tr>
+			<th>name</th>
+			<th>description</th>
+			<th>price</th>
+            <th>scale</th>
+            <th>show</th>
+            <th>edit</th>
+            <th>destroy</th>
+        </tr>    
+	</thead>
+
+	<tbody>
+		<% @groceries.each do |grocery| %>
+	<tr>
+		<td><%= grocery.name %></td>
+		<td><%= grocery.description %></td>
+		<td><%= grocery.price %></td>
+		<td><%= grocery.scale %></td>
+		<td><%= link_to "show", grocery %></td>
+		<td><%= link_to "edit", edit_grocery_path(grocery.id) %></td>
+		<td><%= link_to "destroy", grocery, data:{
+			method: :delete,
+			confirm: "Are you sure"
+		}%>
+
+	</tr>
+	    <% end %>
+    </tbody>
+</table>
+
+<%= link_to "new grocery item", new_grocery_path %>

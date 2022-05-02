@@ -1,0 +1,2 @@
+module LinkdinHelper
+end

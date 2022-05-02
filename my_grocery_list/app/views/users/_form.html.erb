@@ -1,0 +1,27 @@
+<%= form_with model:@user do |form| %>
+
+<div>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+</div>
+
+<div>
+	<%= form.label :email %>
+	<%= form.text_field :email %>
+</div>
+
+<div>
+	<%= form.label :contact %>
+	<%= form.text_field :contact %>
+</div>	
+
+<div>
+	<%= form.label :gender %>
+	<%= form.text_field :gender %>
+</div>
+
+<div>
+	<%= form.submit %>
+</div>
+
+<% end %>	

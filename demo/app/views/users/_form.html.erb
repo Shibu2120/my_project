@@ -1,0 +1,52 @@
+<%= form_with model: user, html: { multipart: true }  do |f| %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :contact %><br>
+    <%= f.text_field :contact %>
+  </div>
+
+  <div class="field">
+    <%= f.label :gender %><br>
+    <%= f.select :gender, ['male', 'female'] %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :avatar %>
+  </div>
+
+  <div class="field">
+    <%= f.label :peparclick_image %>
+    <%= f.file_field :avatar %>
+  </div>
+
+   <div class="field">
+    <%= f.label :audio %>
+    <%= f.file_field :avatar %>
+  </div> 
+
+   <div class="field">
+    <%= f.label :video %>
+    <%= f.file_field :avatar %>
+  </div>
+  
+  <h3>Addresses:</h3>
+  <div id="addresses">
+    <%= f.fields_for :addresses do |address| %>
+      <%= render 'address_fields', f: address %>
+    <% end %>
+    <div class="links">
+      <%= link_to_add_association 'add address', f, :addresses %>
+    </div>
+  </div>
+  <%= f.submit %>
+<% end %>

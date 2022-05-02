@@ -1,0 +1,42 @@
+<%= form_with model:@customer do |form| %>
+
+<p>
+	<%= form.label :first_name %>
+	<%= form.text_field :first_name %>
+</p>	
+
+<p>
+	<%= form.label :last_name %>
+	<%= form.text_field :last_name %>
+</p>
+
+<p>
+	<%= form.label :title %>
+	<%= form.text_field :title %>
+</p>
+
+<p>
+	<%= form.label :email %>
+	<%= form.text_field :email %>
+</p>
+
+<p>
+	<%= form.label :visits %>
+	<%= form.text_field :visits %>
+</p>
+
+<p>
+	<%= form.label :order_count %>
+	<%= form.text_field :order_count %>
+</p>
+
+<p>
+	<%= form.label :lock_version %>
+	<%= form.text_field :lock_version %>
+</p>
+
+<p>
+	<%= form.submit %>
+</p>
+
+<% end %>

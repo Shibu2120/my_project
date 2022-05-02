@@ -1,0 +1,39 @@
+
+<div>
+	<strong>title: </strong>
+	<%= @book.title %>
+</div>
+    
+<div>
+    <strong>year of published: </strong>
+    <%= @book.year_of_published %>
+</div>
+
+<div>
+   <strong>price: </strong>
+   <%= @book.price %>
+</div>
+
+<div>
+   <strong>out of print: </strong>
+   <%= @book.out_of_print %>
+</div>
+
+<div>
+    <strong>views: </strong>
+    <%= @book.views %>
+</div>    
+
+<div>
+    <strong>supplier id: </strong>
+    <%= @book.supplier_id %>
+</div>
+
+<div> 
+    <strong>author id: </strong>
+    <%= @book.author_id %>
+</div>
+
+
+<%= link_to "edit", edit_book_path %>
+<%= link_to "back", books_path %>

@@ -1,0 +1,63 @@
+
+<p>
+<strong>name</strong>
+<%= @user.name %>
+</p>
+
+<p>
+<strong>email</strong>
+<%= @user.email %>
+</p>
+
+<p>
+<strong>contact</strong>
+<%= @user.contact %>
+</p>
+
+<p>
+<strong>gender</strong>
+<%= @user.gender %>
+</p>
+
+<%= link_to "edit", edit_user_path %>
+<%= link_to "back", users_path %>
+
+<p>
+<strong>Grocery list item</strong><br>
+<%#button_to "Grocery item", groceries_path(@user) %>
+<button type="button" class="btn btn-default">
+<%= link_to 'Grocery item', new_user_listitem_path(@user) %></button>
+
+<table width="100%", border="1px">
+	<thead>
+	<tr>
+		<th>name</th>
+		<th>description</th>
+		<th>price</th>
+        <th>scale</th>
+        <th>Quantity</th>
+        <th>edit</th>
+        <th>destroy</th>
+    </tr> 
+	</thead>
+	<tbody>
+		<%  @user.listitems.each do |item| %>
+		<tr>
+			<td><%= item.grocery.name %></td>
+			<td><%= item.grocery.description %></td>
+			<td><%= item.grocery.price  %></td>
+			<td><%= item.grocery.scale %></td>
+			<td><%= item.quantity %></td>
+		    <td><%= link_to "edit", edit_user_listitem_path(item.user_id,item.id) %></td>
+		    <td><%= link_to "destroy", user_listitem_path(item.user_id,item.id), data:{
+		    	method: :delete,
+		    	confirm: "are you sure"
+		    } %>		
+		</tr>	
+            
+        <% end %>
+	</tbody>
+
+</table>
+	 
+

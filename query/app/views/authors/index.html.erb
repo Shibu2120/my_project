@@ -1,0 +1,31 @@
+<h2>author Data </h2>
+
+<table width="100%", border="1px";>
+	<thead>
+		<tr>
+			<th>first_name</th>
+			<th>last_name</th>
+			<th>title</th>
+			<th>show</th>
+			<th>edit</th>
+			<th>destroy</th>
+        </tr>
+    </thead>
+    <tbody>
+		<% @authors.each do |author| %>
+			<tr>
+				<td><%= author.first_name %></td>
+				<td><%= author.last_name %></td>
+				<td><%= author.title %></td>
+				<td><%= link_to "show", author_path(author.id) %></td>
+				<td><%= link_to "edit", edit_author_path(author.id) %></td>
+				<td><%= link_to "destroy", author , data: { method: :delete,
+					confirm: "are you sure"
+				} %></td>
+		    </tr>		
+		<% end %>
+    </tbody>
+</table>   
+<%= will_paginate @authors %>
+
+    <%= link_to "new author data", new_author_path %>

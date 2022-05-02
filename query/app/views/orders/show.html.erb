@@ -1,0 +1,33 @@
+<h2> Book Order</h2>
+
+<div>
+<strong>date_submitted: </strong>
+<%= @customer.date_submitted %>
+</div>
+
+<div>
+<strong>Status:</strong>
+<%= @customer.status %>
+</div>
+
+<div>
+<strong>Subtotal:</strong>
+<%= @customer.subtotal %>
+</div>
+
+<div>
+<strong>Shipping:</strong>
+<%= @customer.shipping %>
+</div>
+
+<div>
+<strong>Tax:</strong>
+<%= @customer.tax %>
+</div>
+
+<div> 
+<strong>Total:</strong>
+<%= @customer.total%>
+</div>
+
+<%= link_to "show", customers_path %>

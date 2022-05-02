@@ -1,0 +1,58 @@
+
+<p>
+  <strong>Name</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email</strong>
+  <%= @user.email %>
+</p>    
+
+<p>
+  <strong>contact</strong>
+  <%= @user.contact %>
+</p>  
+
+<p>
+  <strong>gender</strong>
+  <%= @user.gender %>
+</p>
+
+<p> 
+  <strong>Image</strong>
+  <%= image_tag(@user.avatar.url, width: "40", height: "40", alt: 'Avatar',title: 'Rails Application') if @user.avatar? %>
+</p>
+
+<p>
+  <strong> paperclip</strong>
+  <%= image_tag(@user.avatar.url(:thumb)) %>
+</p>  
+
+<p>
+  <strong>Audio</strong>
+    <%= audio_tag(@user.avatar.url, autoplay: true, controls: true, alt: 'Avatar') %>
+</p>
+
+<p>
+  <strong>Video</strong>
+  <%= video_tag(@user.avatar.url, controls: true, alt: 'Avatar')%>
+</p>
+
+<% if @user.addresses.present? %>
+  <strong>Addresses</strong>
+  <p>
+    <% @user.addresses.each do |address| %>
+      kind: <%= address.kind %> <br>
+      done: <%= address.done %> <br><br>
+    <% end %>
+  </p>
+<% end %>
+
+<ul>
+  <li><%= link_to "Edit", edit_user_path %></li>
+  <li><%= link_to "back", users_path %>  
+</ul>
+
+
+

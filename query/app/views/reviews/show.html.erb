@@ -1,0 +1,38 @@
+
+<div>
+	<strong>title</strong>
+	<%= @review.title %>
+</div>
+    
+<div>
+    <strong>body</strong>
+    <%= @review.body %>
+</div>
+
+<div>
+   <strong>rating</strong>
+   <%= @review.rating %>
+</div>
+
+<div>
+   <strong>state</strong>
+   <%= @review.state %>
+</div>
+
+<div>
+    <strong>customer id</strong>
+    <%= @review.customer_id %>
+</div>
+
+<div> 
+    <strong>book Id</strong>
+    <%= @review.book_id %>
+</div>
+
+<div> 
+    <strong>lock_version </strong>
+    <%= @review.lock_version %>
+</div>
+
+<%= link_to "edit", edit_review_path %>
+<%= link_to "back", reviews_path %>

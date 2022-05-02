@@ -1,0 +1,40 @@
+<h2>Student Data</h2>
+
+<p>
+	<strong>name: </strong>
+	<%= @student.name %>
+</p>
+
+<p>
+   <strong>contact: </strong>
+   <%= @student.contact %>
+</p>
+
+<p>
+   <strong>email: </strong>
+   <%= @student.email %>
+</p>
+
+<p>
+	<strong>address: </strong>
+	<%= @student.address %>
+</p>
+
+<p>
+	<strong>Student Course: </strong>
+	<% @student.courses.each do |course| %>
+	 <%= course.name %>,
+	<% end %>     
+</p>
+
+<tr>
+<th><%= link_to "edit", edit_student_path %></th>
+<th><%= link_to "back", students_path %></th>
+<th><%= link_to "Assign Course", new_student_student_course_path(@student) %></th>
+</tr>
+
+
+ 
+
+   
+

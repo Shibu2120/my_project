@@ -1,0 +1,27 @@
+<h1> Socialplateforms </h1>
+<table>
+<thead>
+	<tr>
+		<th>Name</th>
+      <th>show</th>
+      <th>edit</th>
+      <th>destroy</th>
+	</tr>	
+</thead>
+<tbody>
+
+<tr>
+   <% @socialplateforms.each do |socialplateform| %>
+   <td><%= socialplateform.name %></td>
+   <td><%= link_to "show", socialplateform_path(socialplateform.id) %></td>
+   <td><%= link_to "edit", edit_socialplateform_path(socialplateform.id) %></td>
+   <td><%= link_to "destroy", socialplateform_path(socialplateform.id), data:{
+   	    method: :delete,
+   	    confirm: "Are you sure"
+   } %></td>
+   <% end %>
+<tr>	
+   </tbody>	
+</table>
+
+<%= link_to "New socialplateform", new_socialplateform_path %>

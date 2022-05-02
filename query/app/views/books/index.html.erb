@@ -1,0 +1,48 @@
+<h2>book Data </h2>
+
+<%= form_tag(books_path, method: :get) do %>
+	<p>search book</p>
+	<%= text_field_tag(:search, params[:search])%>
+	<%= submit_tag ("search") %>
+<% end %>
+
+<!-- action="/search" -->
+
+<table width="100%", border="1px";>
+	<thead>
+		<tr>
+			<th>title</th>
+			<th>year of published</th>
+			<th>price</th>
+			<th>out of print</th>
+			<th>views</th>
+     		<th>show</th>
+			<th>edit</th>
+			<th>destroy</th>
+        </tr>
+    </thead>
+    <tbody>
+
+      <% flash.each do |name, msg| -%>
+          <%= content_tag :div, msg, class: name %>
+      <% end %>
+
+    		<% @books.each do |book| %>
+    	<tr>
+
+    		<td><%= book.title %></td>
+    		<td><%= book.year_of_published %></td>
+    		<td><%= book.price %></td>
+    		<td><%= book.out_of_print %></td>
+    		<td><%= book.views %></td>
+    		<td><%= link_to "show", book_path(book.id) %></td>
+    		<td><%= link_to "edit", edit_book_path(book.id) %></td>
+    		<td><%= link_to "destroy", book , data: { method: :delete,
+    			confirm: "are you sure"
+    		} %></td>
+        </tr>		
+    		<% end %>
+    </tbody>
+</table>   
+
+    <%= link_to "new book data", new_book_path %>

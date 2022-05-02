@@ -1,0 +1,18 @@
+<!-- <strong>employee account </strong> -->
+<%#if @employee.account.present? %>
+	<%#@employee.account.account_number %>
+<%#else %>
+	<!-- <h4> This employee doesn't have any account </h4> -->
+ <%#end%>
+<% @employee.accounts.each do |account| %>
+   <p>
+      <strong>Employee Name</strong>
+      <%= account.employee_name %>
+   </p>
+
+   <p>
+      <strong>Account</strong>
+      <%= account.body %>
+   </p>
+
+<% end %>

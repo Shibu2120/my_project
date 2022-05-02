@@ -1,0 +1,42 @@
+<h1> Users </h1>
+<table width="100%", border="1px solid black">
+<thead>
+	<tr>
+		<th>Name</th>
+		<th>email</th>
+		<th>contact</th>
+		<th>gender</th>
+      <th>show</th>
+      <th>edit</th>
+      <th>destroy</th>
+	</tr>	
+</thead>
+<tbody>
+<% @users.each do |user|%>
+<tr>
+   <td><%= user.name %></td>
+   <td><%= user.email %></td>
+   <td><%= user.contact %></td>
+   <td><%= user.gender %></td>
+<!--  <%#if user.addresses.present? %>  
+    <%#user.addresses.each do |address| %>
+    <td>
+      Kind: <%# address.kind %> <br>
+      Street: <%# address.street %> <br><br>
+    </td>
+    <%#end %>
+ <%# else %>
+   <td>it is in show page<td>
+ <%#end %>   -->    
+   <td><%= link_to "show", user_path(user.id) %></td>
+   <td><%= link_to "edit", edit_user_path(user.id) %></td>
+   <td><%= link_to "destroy", user_path(user.id), data:{
+   	    method: :delete,
+   	    confirm: "Are you sure"
+   } %>
+<tr>
+<% end %>	
+   </tbody>	
+</table>
+
+<%= link_to "New User", new_user_path %>

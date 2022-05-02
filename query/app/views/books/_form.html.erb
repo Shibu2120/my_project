@@ -1,0 +1,44 @@
+<center><%= form_with model:@book do |form| %>
+
+<p>
+	<%= form.label :title %>
+	<%= form.text_field :title %>
+</p>	
+
+<p>
+	<%= form.label :year_of_published %>
+	<%= form.text_field :year_of_published %>
+</p>
+
+<p>
+	<%= form.label :price %>
+	<%= form.text_field :price %>
+</p>
+
+<p>
+	<%= form.label :out_of_print %>
+	<%= form.text_field :out_of_print %>
+</p>
+
+<p>
+	<%= form.label :views %>
+	<%= form.text_field :views %>
+</p>
+
+
+<p>
+	<%= form.label :supplier %>
+	<%= form.select :supplier_id, options_for_select(Supplier.all.pluck(:name, :id))  %>
+</p>	
+
+<p>
+	<%= form.label :author %>
+	<%= form.select :author_id, options_for_select(Author.all.pluck(:first_name, :last_name, :id)) %>
+</p>	
+
+<p>
+	<%= form.submit %>
+</p>
+
+<% end %>
+</center>

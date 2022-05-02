@@ -1,0 +1,78 @@
+<%= render "employee_social_accounts/employee_social_account" %>
+
+<%= render "employee_social_accounts/form" %> 
+
+<p id="notice"><%= notice %></p>
+
+<p>
+	<strong>First name</strong>
+	<%= @employee.first_name %>
+</p>
+
+<p>
+   <strong>Last Name</strong>
+   <%= @employee.last_name %>
+</p>
+
+<p>
+   <strong>Phone Number</strong>
+   <%= @employee.phone_number %>
+</p>
+
+<p>
+  <strong>Gmail ID</strong>
+  <%= @employee.gmail_id %>
+</p>
+
+<p>
+   <strong>Address</strong>
+   <%= @employee.address %>
+</p>
+
+<p>
+   <strong>Aadhar</strong>
+   <%= @employee.adhar_number %>
+</p>
+
+<p>
+   <strong>Account</strong>
+   <%= @employee.account_number %>
+</p>
+
+<p>
+   <strong>Date of Birth</strong>
+   <%= @employee.date_of_birth %>
+</p>
+
+<p>
+   <strong>Gender</strong>
+   <%= @employee.gender %>
+</p>
+
+<ul>
+  <li><%= link_to "Edit", edit_employee_path(@employee) %></li>
+  <li><%= link_to "Destroy", employee_path(@employee), data: {
+                    method: :delete,
+                    confirm: "Are you sure?"
+                  } %></li>
+</ul>
+
+<!-- <h2>Feedback of Employee</h2>
+<%# render "feedbacks/feedback" %>  -->
+
+<!-- <h2> Employee account </h2>
+<%#render "accounts/account" %> -->
+
+<!-- <h2> Add a Feedback: </h2>
+<%# render "feedbacks/form" %> --> 
+
+<!-- <h2> Add a Account: </h2>
+<%# render "accounts/form" %> -->
+
+
+
+<%= link_to "Show", employees_path  %>	
+
+<p>
+  On<%= @employee.created_at.strftime("%B %d %Y, %l:%M%P") %>
+</p>

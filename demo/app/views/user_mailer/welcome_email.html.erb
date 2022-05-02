@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+       <p>You got a new user from <%= @user.name %>!</p>
+    <p>
+    User details<br>
+    --------------------------
+    </p>
+    <p>Name: <%= @user.name %></p>
+    <p>Email: <%= @user.email %></p>
+    <p><%= image_tag 'image.jpg' %></p>
+    <p>
+    <p>
+      To login to the site, just follow this link: <%= @url %>.
+    </p>
+    Massage:<br>
+    <p>Thanks for joining and have a great day!</p>
+
+  </body>
+</html>

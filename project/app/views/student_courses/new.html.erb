@@ -1,0 +1,14 @@
+<h2> student course</h2>
+
+<%= form_with model:[@student, @student.student_courses.build ] do |form|%>
+
+<div class="field">
+	<%= form.label :course_id %><br>
+    <%= form.select :courses, options_for_select(Course.all.pluck(:name, :id)), {:include_blank => true}, {:multiple => true} %>
+</div>
+
+<div class="actions">
+	<%= form.submit %>
+</div>
+
+<% end %>

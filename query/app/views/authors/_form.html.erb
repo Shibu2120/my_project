@@ -1,0 +1,22 @@
+<%= form_with model:@author do |form| %>
+
+<p>
+	<%= form.label :first_name %>
+	<%= form.text_field :first_name %>
+</p>	
+
+<p>
+	<%= form.label :last_name %>
+	<%= form.text_field :last_name %>
+</p>
+
+<p>
+	<%= form.label :title %>
+	<%= form.text_field :title %>
+</p>
+
+<p>
+	<%= form.submit %>
+</p>
+
+<% end %>

@@ -1,0 +1,14 @@
+<h2> Book order </h2>
+
+<%= form_with model:[@order, @order.book_orders.build ] do |form|%>
+
+<div class="field">
+	<%= form.label :book_id %><br>
+    <%= form.select :books, options_for_select(Book.all.pluck(:name, :id)), {:include_blank => true}, {:multiple => true} %>
+</div>
+
+<div class="actions">
+	<%= form.submit %>
+</div>
+
+<% end %>

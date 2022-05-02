@@ -1,0 +1,24 @@
+
+  <p>
+    <strong>Hotel id:</strong>
+    <%= review.hotel_id %>
+  </p>
+
+  <p>
+    <strong>Rating:</strong>
+    <%= review.rating %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= review.description %>
+  <p>
+    <p>
+  <%= link_to "Destroy Review", hotel_review_path(@hotel, review), data: {
+                method: :delete,
+                confirm: "Are you sure?"
+              } %>
+</p>
+<hr>
+
+

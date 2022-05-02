@@ -1,0 +1,12 @@
+<% @employee.feedbacks.each do |feedback| %>
+   <p>
+      <strong>Employee Name</strong>
+      <%= feedback.employee_name %>
+   </p>
+
+   <p>
+      <strong>Feedback</strong>
+      <%= feedback.body %>
+   </p>
+
+<% end %>  

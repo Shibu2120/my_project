@@ -1,0 +1,14 @@
+<% form_with model: [ @employee, @employee.build_account ] do |form| %>
+
+<p>
+	<%= form.label :account_number %>
+	<%= form.text_field :account_number %>
+</p>
+
+<p>
+	<%= form.label :body %>
+	<%= form.text_field :body %>
+</p>	
+
+
+<% end %>	

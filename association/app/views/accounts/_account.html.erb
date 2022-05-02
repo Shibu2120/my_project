@@ -1,0 +1,8 @@
+   
+<% if @supplier.account.present? %>
+   <%= @supplier.account.account_number %>
+<% else %>
+   <h4> This supplier doesn't have any account </h4> 
+<% end %>
+
+   
